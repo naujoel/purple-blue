@@ -1,0 +1,61 @@
+baseurl         = "https://naujoel.github.io/"
+theme           = "casper-two"
+languageCode    = "es-ES"
+disqusShortname = ""
+paginate        = 6
+#SectionPagesMenu = "main"
+canonifyurls    = true
+
+[params]
+  title       = "Naujoël"
+  subtitle    = "Tecnologías web y política?"
+  copyright   = "© 2020"
+
+  cover       = "img/blog-cover.jpg"
+  description = "Consejos sobre tecnologías web y política"
+  metaDescription = "Consejos sobre tecnologías web y política"
+  googleAnalytics = ""
+  customCSS = []
+  RSSLink = ""
+
+  twitterName = ""
+  fbName = ""
+  githubName = "naujoel"
+  linkedinName = ""
+  mediumName = ""
+
+  logo = "logoNaujoel.png"
+  orgName = "Naujoël"
+  orgWebsite = "https://naujoel.github.io"
+  orgDescription = "Jugando con tecnologías y política"
+
+  showSupport = true
+
+  author = "Naujoël"
+  authorAvatar = "img/avatarLeo.jpg"
+  authorLocation = "Alzira, ES"
+  authorWebsite = "https://naujoel.github.io"
+  authorDescription = "Jugando con tecnologías y política"
+
+  pageNotFoundTitle = "404 - Page not found"
+
+  #casper or caspertwo
+  singleViewStyle = "caspertwo"
+
+[permalinks]
+  post = "/post/:slug/"
+
+[[menu.main]]
+  name = "Inicio"
+  url = "/"
+  weight = 200
+
+[[menu.main]]
+  name = "Blog"
+  url = "/post/"
+  weight = 100
+
+[[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  weight = 99
