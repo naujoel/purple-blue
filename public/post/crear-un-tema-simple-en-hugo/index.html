@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="es-ES" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Crear un tema simple en Hugo &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://naujoel.github.io/favicon.ico" />
+    <link rel="canonical" href="https://naujoel.github.io/post/crear-un-tema-simple-en-hugo/" />
+
+     <meta name="description" content="Introducción Este tutorial te mostrará cómo crear un tema simple en Hugo. Supongo que estás familiarizado con HTML, la línea de comando bash, y que te sientes c" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary"/>
+    
+ 
+    <meta name="twitter:title" content="Crear un tema simple en Hugo"/>
+    <meta name="twitter:description" content="Introducción Este tutorial te mostrará cómo crear un tema simple en Hugo. Supongo que estás familiarizado con HTML, la línea de comando bash, y que te sientes c"/>
+    <meta name="twitter:url" content="https://naujoel.github.io/post/crear-un-tema-simple-en-hugo/" />
+    <meta name="twitter:site" content="@"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Crear un tema simple en Hugo &middot; Naujoël" />
+    <meta property="og:url" content="https://naujoel.github.io/post/crear-un-tema-simple-en-hugo/" />
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Introducción Este tutorial te mostrará cómo crear un tema simple en Hugo. Supongo que estás familiarizado con HTML, la línea de comando bash, y que te sientes c" />
+
+    <meta property="article:published_time" content="0001-01-01T00:00:00Z" />
+    
+
+    <meta property="og:image" content="https://naujoel.github.io/img/blog-cover.jpg"/>
+
+    <meta name="generator" content="Hugo 0.62.2" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://naujoel.github.io/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://naujoel.github.io/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="ctsingle">
+
+  <div class="site-wrapper"> 
+
+<header class="site-header outer "  style="background-image: url(https://naujoel.github.io/img/blog-cover.jpg)"  >
+  <div class="inner">
+    <div class="site-header-content">
+      <h1 class="site-title">
+        <img class="site-logo" src="https://naujoel.github.io/logoNaujoel.png" alt="Naujoël" />
+       </h1>
+        <h2 class="site-description">Tecnologías web y política? </h2>
+    </div>
+
+    <nav class="site-nav">
+      <div class="site-nav-left"><ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="https://naujoel.github.io/">Inicio</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://naujoel.github.io/about/">Sobre mí</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://naujoel.github.io/post/">Blog</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="https://naujoel.github.io/categories/">Categories</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    
+
+                    
+
+                    <a class="social-link" href="https://github.com/naujoel" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+    <div class="post-feed">
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://naujoel.github.io/post/crear-un-tema-simple-en-hugo/">
+      <div class="post-card-image" style="background-image: url(https://naujoel.github.io/defimg/6.jpg)"></div>
+    </a>    
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://naujoel.github.io/post/crear-un-tema-simple-en-hugo/">
+          <header class="post-card-header">
+              
+              <h2 class="post-card-title">Crear un tema simple en Hugo</h2>
+          </header>
+      </a>
+      <section class="post-card-excerpt" style="padding: 0 25px;">
+          <h2 id="introducción">Introducción</h2>
+<p>Este tutorial te mostrará cómo crear un tema simple en Hugo. Supongo que estás familiarizado con HTML, la línea de comando bash, y que te sientes cómodo usando Markdown para formatear contenido. Explicaré cómo Hugo usa plantillas y cómo puedes organizar tus plantillas para crear un tema. No cubriré el uso de CSS para diseñar el tema.</p>
+<p>Comenzaremos creando un nuevo sitio con una plantilla muy básica. Luego agregaremos algunas páginas y publicaciones. Con pequeñas variaciones al respecto, podrás crear muchos tipos diferentes de sitios web.</p>
+<p>En este tutorial, los comandos que ingrese comenzarán con &ldquo;$&rdquo;, a lo que seguirá la salida. Las líneas que comienzan con &ldquo;#&rdquo; son comentarios que he agregado para explicar un punto. Cuando muestro actualizaciones a un archivo, el &ldquo;: wq&rdquo; en la última línea significa guardar el archivo.</p>
+<p>Aquí va un ejemplo:</p>
+<pre><code>## esto es un comentario
+$ echo this is a command
+this is a command
+
+## editar el archivo
+$vi foo.md
++++
+date = &quot;07-01-2020&quot;
+title = &quot;creando un nuevo tema&quot;
++++
+
+bah and humbug
+:wq
+
+## mostrarlo
+$ cat foo.md
++++
+date = &quot;07-01-2020&quot;
+title = &quot;creando un nuevo tema&quot;
++++
+
+bah and humbug
+$
+</code></pre><h2 id="algunas-definiciones">Algunas definiciones</h2>
+<p>Hay unos pocos conceptos que necesitas comprender antes de crear un tema.</p>
+<h3 id="skins-máscaras">Skins (Máscaras)</h3>
+<p>Las máscaras son los archivos responsables de la apariencia de tu sitio. Es el CSS que controla los colores y las fuentes, es el Javascript que determina las acciones y reacciones. También son las reglas que usa Hugo para transformar el contenido en el HTML que el sitio servirá a los visitantes.</p>
+<p>Tienes dos formas de crear una máscara. La forma más simple es crearlo en el directorio <code>layouts/</code>. Si lo haces, no tienes que preocuparte por configurar Hugo para que lo reconozca. El primer lugar donde Hugo buscará reglas y archivos es en el directorio <code>layouts/</code> para que siempre encuentre la máscara.</p>
+<p>La segunda opción es crearlo en un subdirectorio del directorio <code>themes/</code>. Si lo haces, siempre debes decirle a Hugo dónde buscar la máscara. Sin embargo, es un trabajo extra, entonces, ¿por qué molestarse con él?</p>
+<p>La diferencia entre crear una máscara en <code>layouts/</code> y crearla en <code>themes/</code> es muy sutil. Una máscara en <code>layouts/</code> no se puede personalizar sin actualizar las plantillas y los archivos estáticos a partir de los cuales está construida. Una máscara creada en <code>themes/</code>, por otro lado, puede ser y eso facilita que otras personas la usen.</p>
+<p>El resto de este tutorial llamará tema a un skin creado en el directorio <code>themes/</code>.</p>
+<p>Ten en cuenta que puedes usar este tutorial para crear una máscara en el directorio <code>layouts/</code> si lo deseas. La principal diferencia será que no necesitarás actualizar el archivo de configuración del sitio para usar un tema.</p>
+<h3 id="la-página-de-inicio">La página de inicio</h3>
+<p>La página de inicio, o página de destino, es la primera página que ven muchos visitantes de un sitio. Es el archivo index.html en el directorio raíz del sitio web. Como Hugo escribe archivos en el directorio <code>public/</code>, nuestra página de inicio es <code>public/index.html</code>.</p>
+<h3 id="el-archivo-de-configuración-del-sitio">El archivo de configuración del sitio</h3>
+<p>Cuando se ejecuta Hugo, busca un archivo de configuración que contenga configuraciones que anulen los valores predeterminados para todo el sitio. El archivo puede usar TOML, YAML o JSON. Prefiero usar TOML para mis archivos de configuración. Si prefieres usar JSON o YAML, deberás traducir mis ejemplos. También deberás cambiar el nombre del archivo, ya que Hugo usa la extensión para determinar cómo procesarlo.</p>
+<p>Hugo traduce los archivos de Markdown a HTML. Por defecto, Hugo espera encontrar archivos Markdown en tu directorio <code>content/</code> y archivos de plantilla en su directorio <code>themes/</code>. Hugo creará archivos HTML en su directorio <code>public/</code>. Puedes cambiar esto especificando ubicaciones alternativas en el archivo de configuración.</p>
+<h3 id="contenido">Contenido</h3>
+<p>El contenido se almacena en archivos de texto que contienen dos secciones. La primera sección es la &ldquo;front matter&rdquo;, que es la metainformación sobre el contenido. La segunda sección contiene Markdown que se convertirá a HTML.</p>
+<h4 id="front-matter">Front Matter</h4>
+<p>La Front Matter es la información sobre el contenido. Al igual que el archivo de configuración, puede escribirse en TOML, YAML o JSON. A diferencia del archivo de configuración, Hugo no usa la extensión del archivo para conocer el formato. Busca marcadores para señalar el tipo. TOML está rodeado por “<code>+++</code>”, YAML por “<code>---</code>” y JSON está encerrado entre llaves. Prefiero usar TOML, por lo que deberás traducir mis ejemplos si prefiere YAML o JSON.</p>
+<p>La información de la Front Matter se pasa a la plantilla antes de que el contenido se procese en HTML.</p>
+<h4 id="markdown">Markdown</h4>
+<p>El contenido está escrito en Markdown, lo que facilita la creación del contenido. Hugo ejecuta el contenido a través de un motor Markdown para crear el HTML que se escribirá en el archivo de salida.</p>
+<h3 id="archivos-de-plantilla">Archivos de plantilla</h3>
+<p>Hugo usa archivos de plantilla para representar el contenido en HTML. Los archivos de plantilla son un puente entre el contenido y la presentación. Las reglas en la plantilla definen qué contenido se publica, dónde se publica y cómo se representará en el archivo HTML. La plantilla guía la presentación especificando el estilo a utilizar.</p>
+<p>Hay tres tipos de plantillas: individual, lista y parcial. Cada tipo toma un poco de contenido como entrada y lo transforma en función de los comandos de la plantilla.</p>
+<p>Hugo utiliza su conocimiento del contenido para encontrar el archivo de plantilla utilizado para representar el contenido. Si no puede encontrar una plantilla que coincida exactamente con el contenido, cambiará de nivel y buscará desde allí. Continuará haciéndolo hasta que encuentre una plantilla coincidente o se quede sin plantillas para probar. Si no puede encontrar una plantilla, utilizará la plantilla predeterminada para el sitio.</p>
+<p>Ten en cuenta que puedes utilizar la Front Matter para influir en la elección de plantillas de Hugo.</p>
+<h4 id="plantilla-individual">Plantilla individual</h4>
+<p>Se utiliza una plantilla individual para representar una sola pieza de contenido. Por ejemplo, un artículo o publicación sería una sola pieza de contenido y usaría una sola plantilla.</p>
+<h4 id="plantilla-de-lista">Plantilla de lista</h4>
+<p>Una plantilla de lista representa un grupo de contenido relacionado. Eso podría ser un resumen de publicaciones recientes o de todos los artículos de una categoría. Las plantillas de lista pueden contener múltiples grupos.</p>
+<p>La plantilla de la página de inicio es un tipo especial de plantilla de lista. Hugo asume que la página de inicio de su sitio actuará como el portal para el resto del contenido del sitio.</p>
+<h4 id="plantilla-parcial">Plantilla parcial</h4>
+<p>Una plantilla parcial es una plantilla que se puede incluir en otras plantillas. Las plantillas parciales deben llamarse utilizando el comando de plantilla <code>partial</code>. Son muy útiles para acumular comportamientos comunes. Por ejemplo, tu sitio puede tener un banner que usan todas las páginas. En lugar de copiar el texto del banner en cada plantilla individual y de lista, puedes crear una plantilla parcial con el banner en ella. De esa manera, si decides cambiar el banner, solo tiene que cambiar la plantilla parcial.</p>
+<h2 id="crear-un-nuevo-sitio">Crear un nuevo sitio</h2>
+<p>Usemos a Hugo para crear un nuevo sitio web. Soy usuario de Mac, así que crearé el mío en mi directorio de inicio, en la carpeta Sitios. Si estás utilizando Linux, es posible que primero debas crear la carpeta.</p>
+<p>El comando <code>new site</code> creará un esqueleto de un sitio. Le dará la estructura básica del directorio y un archivo de configuración utilizable.</p>
+<pre><code>$ hugo new site ~/Sitios/naujoel
+$ cd ~/Sitios/naujoel
+$ ls -l
+total 8
+drwxr-xr-x  7 quoha  staff  238 Sep 29 16:49 .
+drwxr-xr-x  3 quoha  staff  102 Sep 29 16:49 ..
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
+-rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
+$
+</code></pre><p>Echa un vistazo en el directorio <code>content/</code> para confirmar que está vacío.</p>
+<p>Los otros directorios (<code>archetypes/</code>, <code>layouts/</code>, and <code>static/</code>) se utilizan al personalizar un tema. Ese es un tema para un tutorial diferente, así que ignóralos por ahora.</p>
+<h3 id="generar-el-html-para-el-nuevo-sitio">Generar el HTML para el nuevo sitio</h3>
+<p>Ejecutar el comando <code>hugo</code> sin opciones leerá todo el contenido disponible y generará los archivos HTML. También copiará todos los archivos estáticos (eso es todo lo que no es contenido). Como tenemos un sitio vacío, no servirá de mucho, pero lo hará muy rápidamente.</p>
+<pre><code>$ hugo --verbose
+INFO: 2014/09/29 Using config file: config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sitios/naujoel/static/ to /Users/quoha/Sitios/naujoel/public/
+WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
+WARN: 2014/09/29 Unable to locate layout: [404.html]
+0 draft content 
+0 future content 
+0 pages created 
+0 tags created
+0 categories created
+in 2 ms
+$ 
+</code></pre><p>El indicador <code>--verbose</code> proporciona información adicional que será útil cuando creemos la plantilla. Cada línea de la salida que comienza con <code>INFO:</code> o <code>WARN:</code> está presente porque usamos esa bandera. Las líneas que comienzan con <code>WARN:</code> son mensajes de advertencia. Los revisaremos más tarde.</p>
+<p>Podemos verificar que el comando funcionó mirando el directorio nuevamente.</p>
+<pre><code>$ ls -l
+total 8
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
+-rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:02 public
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
+$
+</code></pre><p>¿Ves ese nuevo directorio <code>public/</code>? Hugo colocó todo el contenido generado allí. Cuando estés listo para publicar tu sitio web, ese es el lugar para comenzar. Sin embargo, por ahora, confirmemos que tenemos lo que esperaríamos de un sitio sin contenido.</p>
+<pre><code>$ ls -l public
+total 16
+-rw-r--r--  1 quoha  staff  416 Sep 29 17:02 index.xml
+-rw-r--r--  1 quoha  staff  262 Sep 29 17:02 sitemap.xml
+$ 
+</code></pre><p>Hugo creó dos archivos XML, que es estándar, pero no hay archivos HTML.</p>
+<h3 id="probar-el-nuevo-sitio">Probar el nuevo sitio</h3>
+<p>Verifica que puedes ejecutar el servidor web incorporado. Si lo haces, acortarás drásticamente el ciclo de desarrollo. Comienza ejecutando el comando <code>server</code>. Si tienes éxito, verás una salida similar a la siguiente:</p>
+<pre><code>$ hugo server --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sitios/naujoel/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sitios/naujoel/static/ to /Users/quoha/Sitios/naujoel/public/
+WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
+WARN: 2014/09/29 Unable to locate layout: [404.html]
+0 draft content 
+0 future content 
+0 pages created 
+0 tags created
+0 categories created
+in 2 ms
+Serving pages from /Users/quoha/Sitios/naujoel/public
+Web Server is available at http://localhost:1313
+Press Ctrl+C to stop
+</code></pre><p>Conéctate a la URL indicada (está en la línea que comienza con <code>Web Server</code>). Si todo funciona correctamente, deberías obtener una página que muestre lo siguiente:</p>
+<pre><code>index.xml
+sitemap.xml
+</code></pre><p>Esa es una lista del directorio <code>public/</code>. Hugo no creó una página de inicio porque nuestro sitio no tiene contenido. Cuando no hay un archivo index.html en un directorio, el servidor enumera los archivos en el directorio, que es lo que deberías ver en tu navegador.</p>
+<p>Volvamos y miremos esas advertencias nuevamente.</p>
+<pre><code>WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
+WARN: 2014/09/29 Unable to locate layout: [404.html]
+</code></pre><p>Esa segunda advertencia es más fácil de explicar. No hemos creado una plantilla para ser utilizada para generar &ldquo;errores de página no encontrada&rdquo;. El mensaje 404 es un tema para un tutorial por separado.</p>
+<p>Ahora para la primera advertencia. Es para la página de inicio. Se nota porque el primer diseño que buscó fue &ldquo;index.html&rdquo;. Eso solo lo usa la página de inicio.</p>
+<p>Me gusta la bandera <code>--verbose</code> porque hace que Hugo enumere los archivos que está buscando. Para la página de inicio, son index.html, _default/list.html y _default/single.html. Hay algunas reglas que cubriremos más adelante que explican los nombres y las rutas. Por ahora, solo recuerda que Hugo no pudo encontrar una plantilla para la página de inicio y te lo dijo.</p>
+<p>En este punto, tienes una instalación y un sitio en funcionamiento sobre los que podemos construir. Todo lo que queda es agregar algo de contenido y un tema para mostrarlo.</p>
+<h2 id="crear-un-nuevo-tema">Crear un nuevo tema</h2>
+<p>Hugo no se envía con un tema predeterminado. Hay algunos disponibles (conté una docena cuando instalé Hugo por primera vez) y Hugo viene con un comando para crear nuevos temas.</p>
+<p>Vamos a crear un nuevo tema llamado &ldquo;zafta&rdquo;. Dado que el objetivo de este tutorial es mostrarte cómo completar los archivos para extraer su contenido, el tema no contendrá ningún CSS. En otras palabras, feo pero funcional.</p>
+<p>Todos los temas tienen opiniones sobre el contenido y el diseño. Por ejemplo, Zafta usa &ldquo;post&rdquo; sobre &ldquo;blog&rdquo;. Las opiniones fuertes crean plantillas más simples, pero las opiniones diferentes hacen que sea más difícil usar temas. Cuando crees un tema, considera usar los términos que hacen otros temas.</p>
+<h3 id="crear-un-esqueleto">Crear un esqueleto</h3>
+<p>Usa el comando &ldquo;new&rdquo; de hugo para crear el esqueleto de un tema. Esto crea la estructura de directorios y coloca archivos vacíos para que los completes.</p>
+<pre><code>$ hugo new theme zafta
+
+$ ls -l
+total 8
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
+-rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:02 public
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
+drwxr-xr-x  3 quoha  staff  102 Sep 29 17:31 themes
+
+$ find themes -type f | xargs ls -l
+-rw-r--r--  1 quoha  staff  1081 Sep 29 17:31 themes/zafta/LICENSE.md
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/archetypes/default.md
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/single.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/index.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
+-rw-r--r--  1 quoha  staff    93 Sep 29 17:31 themes/zafta/theme.toml
+$ 
+</code></pre><p>El esqueleto incluye plantillas (los archivos que terminan en .html), el archivo de licencia, una descripción de tu tema (el archivo theme.toml) y un arquetipo vacío.</p>
+<p>Tómate un minuto para completar los archivos theme.toml y LICENSE.md. Son opcionales, pero si vas a distribuir tu tema, le dice al mundo a quién alabar (o culpar). También es bueno declarar la licencia para que las personas sepan cómo pueden usar el tema.</p>
+<pre><code>$ vi themes/zafta/theme.toml
+author = &quot;michael d henderson&quot;
+description = &quot;a minimal working template&quot;
+license = &quot;MIT&quot;
+name = &quot;zafta&quot;
+source_repo = &quot;&quot;
+tags = [&quot;tags&quot;, &quot;categories&quot;]
+:wq
+
+## also edit themes/zafta/LICENSE.md and change
+## the bit that says &quot;YOUR_NAME_HERE&quot;
+</code></pre><p>Ten en cuenta que los archivos de plantilla del esqueleto están vacíos. No te preocupes, lo cambiaremos en breve.</p>
+<pre><code>$ find themes/zafta -name '*.html' | xargs ls -l
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/single.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/index.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
+$
+</code></pre><h3 id="actualiza-el-archivo-de-configuración-para-usar-el-tema">Actualiza el archivo de configuración para usar el tema</h3>
+<p>Ahora que tenemos un tema para trabajar, es una buena idea agregar el nombre del tema al archivo de configuración. Esto es opcional, porque siempre puedes agregar &ldquo;-t zafta&rdquo; en todos sus comandos. Me gusta ponerlo en el archivo de configuración porque me gustan las líneas de comando más cortas. Si no lo colocas en el archivo de configuración o no lo especificas en la línea de comando, no utilizarás la plantilla que esperas.</p>
+<p>Edita el archivo para agregar el tema, agrega un título para el sitio y especifique que todo nuestro contenido utilizará el formato TOML.</p>
+<pre><code>$ vi config.toml
+theme = &quot;zafta&quot;
+baseurl = &quot;&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;zafta - totally refreshing&quot;
+MetaDataFormat = &quot;toml&quot;
+:wq
+
+$
+</code></pre><h3 id="generar-el-sitio">Generar el sitio</h3>
+<p>Ahora que tenemos un tema vacío, generemos el sitio nuevamente.</p>
+<pre><code>$ hugo --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content 
+0 future content 
+0 pages created 
+0 tags created
+0 categories created
+in 2 ms
+$
+</code></pre><p>¿Notaste que la salida es diferente? El mensaje de advertencia para la página de inicio ha desaparecido y tenemos una línea de información adicional que dice que Hugo se está sincronizando desde el directorio del tema.</p>
+<p>Veamos el directorio <code>public/</code> para ver qué ha creado Hugo.</p>
+<pre><code>$ ls -l public
+total 16
+drwxr-xr-x  2 quoha  staff   68 Sep 29 17:56 css
+-rw-r--r--  1 quoha  staff    0 Sep 29 17:56 index.html
+-rw-r--r--  1 quoha  staff  407 Sep 29 17:56 index.xml
+drwxr-xr-x  2 quoha  staff   68 Sep 29 17:56 js
+-rw-r--r--  1 quoha  staff  243 Sep 29 17:56 sitemap.xml
+$
+</code></pre><p>Nota cuatro cosas:</p>
+<ol>
+<li>Hugo creó una página de inicio. Este es el archivo public/index.html.</li>
+<li>Hugo creó un directorio css/.</li>
+<li>Hugo creó un directorio js/.</li>
+<li>Hugo afirmó que creó 0 páginas. Creó un archivo y lo copió sobre archivos estáticos, pero no creó ninguna página. Esto se debe a que considera que una &ldquo;página&rdquo; es un archivo creado directamente a partir de un archivo de contenido. No cuenta cosas como los archivos index.html que crea automáticamente.</li>
+</ol>
+<h4 id="la-página-de-inicio-1">La página de inicio</h4>
+<p>Hugo admite muchos tipos diferentes de plantillas. La página de inicio es especial porque obtiene su propio tipo de plantilla y su propio archivo de plantilla. El archivo layouts/index.html se utiliza para generar el HTML para la página de inicio. La documentación de Hugo dice que esta es la única plantilla requerida, pero eso depende. El mensaje de advertencia de Hugo muestra que busca tres plantillas diferentes:</p>
+<pre><code>WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
+</code></pre><p>Si no puede encontrar ninguno de estos, omite completamente la creación de la página de inicio. Notamos eso cuando creamos el sitio sin tener un tema instalado.</p>
+<p>Cuando Hugo creó nuestro tema, creó una plantilla de página de inicio vacía. Ahora, cuando construimos el sitio, Hugo encuentra la plantilla y la usa para generar el HTML para la página de inicio. Como el archivo de plantilla está vacío, el archivo HTML también está vacío. Si la plantilla tuviera alguna regla, Hugo la habría usado para generar la página de inicio.</p>
+<pre><code>$ find . -name index.html | xargs ls -l
+-rw-r--r--  1 quoha  staff  0 Sep 29 20:21 ./public/index.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 ./themes/zafta/layouts/index.html
+$ 
+</code></pre><h4 id="la-magia-de-la-estática">La magia de la estática</h4>
+<p>Hugo hace dos cosas al generar el sitio. Utiliza plantillas para transformar contenido en HTML y copia archivos estáticos en el sitio. A diferencia del contenido, los archivos estáticos no se transforman. Se copian exactamente como son.</p>
+<p>Hugo asume que tu sitio usará CSS y JavaScript, por lo que crea directorios en su tema para mantenerlos. ¿Recuerdas opiniones? Bueno, la opinión de Hugo es que almacenarás tu CSS en un directorio llamado css/ y tu JavaScript en un directorio llamado js/. Si no te gusta, puedes cambiar los nombres de directorio en tu directorio de temas o incluso eliminarlos por completo. Hugo es lo suficientemente amable como para ofrecer su opinión, y luego comportarse bien si no está de acuerdo.</p>
+<pre><code>$ find themes/zafta -type d | xargs ls -ld
+drwxr-xr-x  7 quoha  staff  238 Sep 29 17:38 themes/zafta
+drwxr-xr-x  3 quoha  staff  102 Sep 29 17:31 themes/zafta/archetypes
+drwxr-xr-x  5 quoha  staff  170 Sep 29 17:31 themes/zafta/layouts
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/layouts/_default
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/layouts/partials
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/static
+drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/css
+drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/js
+$ 
+</code></pre><h2 id="el-ciclo-de-desarrollo-del-tema">El ciclo de desarrollo del tema</h2>
+<p>Cuando trabajes en un tema, realizarás cambios en el directorio del tema, reconstruirás el sitio y verificarás los cambios en el navegador. Hugo hace esto muy fácil:</p>
+<ol>
+<li>Purga el directorio public/.</li>
+<li>Ejecuta el servidor web incorporado en modo watch.</li>
+<li>Abre tu sitio en un navegador.</li>
+<li>Actualiza el tema.</li>
+<li>Echa un vistazo a la ventana de tu navegador para ver los cambios.</li>
+<li>Regresa al paso 4.</li>
+</ol>
+<p>Daré una opinión más: nunca trabajes en un tema en un sitio en vivo. Siempre trabaja en una copia de tu sitio. Realiza cambios en tu tema, pruébalos y luego cópialos en tu sitio. Para mayor seguridad, usa una herramienta como Git para mantener un historial de revisión de tu contenido y tu tema. Créeme cuando digo que es demasiado fácil perder tu mente y tus cambios.</p>
+<p>Consulta el sitio oficial de Hugo para obtener información sobre el uso de Git con Hugo.</p>
+<h3 id="purgar-el-directorio-public">Purgar el directorio <code>public/</code></h3>
+<p>Al generar el sitio, Hugo creará nuevos archivos y actualizará los existentes en el directorio <code>public/</code>. No eliminará los archivos que ya no se usan. Por ejemplo, los archivos que se crearon en el directorio incorrecto o con el título incorrecto permanecerán. Si los dejas, puedes confundirte con ellos más tarde. Por ello, recomiendo que limpies tu sitio antes de generarlo.</p>
+<p>Nota: Si estás construyendo en un SSD, debes ignorar esto. Batir un SSD puede ser costoso.</p>
+<h3 id="la-opción-watch-de-hugo">La opción Watch de Hugo</h3>
+<p>La opción <code>--watch</code> de Hugo supervisará el directorio content/ y los directorios de tus temas en busca de cambios y reconstruirá el sitio automáticamente.</p>
+<h3 id="recarga-en-vivo">Recarga en vivo</h3>
+<p>El servidor web incorporado de Hugo admite la recarga en vivo. A medida que las páginas se guardan en el servidor, se le indica al navegador que actualice la página. Por lo general, esto sucede más rápido de lo que puedes decir: &ldquo;Wow, eso es totalmente sorprendente&rdquo;.</p>
+<h3 id="comandos-de-desarrollo">Comandos de desarrollo</h3>
+<p>Usa los siguientes comandos como base para tu flujo de trabajo.</p>
+<pre><code>## purgar archivos viejos. Hugo recreará el directorio public/.
+##
+$ rm -rf public
+##
+## ejecuta Hugo en modo watch
+##
+$ hugo server --watch --verbose
+</code></pre><p>Aquí hay una salida de ejemplo que muestra a Hugo detectando un cambio en la plantilla para la página de inicio. Una vez generado, el navegador web vuelve a cargar la página automáticamente. Ha sucedido antes de decirlo, es increíble.</p>
+<pre><code>$ rm -rf public
+$ hugo server --watch --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content 
+0 future content 
+0 pages created 
+0 tags created
+0 categories created
+in 2 ms
+Watching for changes in /Users/quoha/Sites/zafta/content
+Serving pages from /Users/quoha/Sites/zafta/public
+Web Server is available at http://localhost:1313
+Press Ctrl+C to stop
+INFO: 2014/09/29 File System Event: [&quot;/Users/quoha/Sites/zafta/themes/zafta/layouts/index.html&quot;: MODIFY|ATTRIB]
+Change detected, rebuilding site
+
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content 
+0 future content 
+0 pages created 
+0 tags created
+0 categories created
+in 1 ms
+</code></pre><h2 id="actualiza-la-plantilla-de-la-página-de-inicio">Actualiza la plantilla de la página de inicio</h2>
+<p>La página de inicio es una de las pocas páginas especiales que Hugo crea automáticamente. Como se mencionó anteriormente, busca uno de los tres archivos en el directorio layout/ del tema:</p>
+<ol>
+<li>index.html</li>
+<li>_default/list.html</li>
+<li>_default/single.html</li>
+</ol>
+<p>Podríamos actualizar una de las plantillas predeterminadas, pero una buena decisión de diseño es actualizar la plantilla más específica disponible. Esa no es una regla estricta (de hecho, la romperemos varias veces en este tutorial), pero es una buena generalización.</p>
+<h3 id="hacer-una-página-de-inicio-estática">Hacer una página de inicio estática</h3>
+<p>En este momento, esa página está vacía porque no tenemos ningún contenido y no tenemos ninguna lógica en la plantilla. Cambiemos eso agregando algo de texto a la plantilla.</p>
+<pre><code>$ vi themes/zafta/layouts/index.html
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;body&gt; 
+  &lt;p&gt;Hugo dice hola!&lt;/p&gt; 
+&lt;/body&gt; 
+&lt;/html&gt; 
+:wq
+
+$
+</code></pre><p>Crea el sitio web y luego verifica los resultados.</p>
+<pre><code>$ hugo --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content 
+0 future content 
+0 pages created 
+0 tags created
+0 categories created
+in 2 ms
+
+$ find public -type f -name '*.html' | xargs ls -l
+-rw-r--r--  1 quoha  staff  78 Sep 29 21:26 public/index.html
+
+$ cat public/index.html 
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;body&gt; 
+  &lt;p&gt;Hugo dice hola!&lt;/p&gt; 
+&lt;/html&gt;
+</code></pre><h4 id="recarga-en-vivo-1">Recarga en vivo</h4>
+<p>Nota: Si estás ejecutando el servidor con la opción <code>--watch</code>, verás contenido diferente en el archivo:</p>
+<pre><code>$ cat public/index.html 
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;body&gt; 
+  &lt;p&gt;Hugo dice hola!&lt;/p&gt; 
+&lt;script&gt;document.write('&lt;script src=&quot;http://' 
+        + (location.host || 'localhost').split(':')[0] 
+    + ':1313/livereload.js?mindelay=10&quot;&gt;&lt;/' 
+        + 'script&gt;')&lt;/script&gt;&lt;/body&gt; 
+&lt;/html&gt;
+</code></pre><p>Cuando usa <code>--watch</code>, Hugo agrega el script de recarga en vivo. Busca la recarga en vivo en la documentación para ver qué hace y cómo deshabilitarla.</p>
+<h3 id="crear-una-página-de-inicio-dinámica">Crear una página de inicio &ldquo;dinámica&rdquo;</h3>
+<p>&ldquo;¿Página de inicio dinámica?&rdquo; Hugo es un generador estático de sitios web, por lo que parece una cosa extraña. Quiero decir, hagamos que la página de inicio refleje automáticamente el contenido del sitio cada vez que Hugo lo construya. Usaremos la iteración en la plantilla para hacer eso.</p>
+<h4 id="crear-nuevas-publicaciones">Crear nuevas publicaciones</h4>
+<p>Ahora que tenemos la página de inicio generando contenido estático, agreguemos algo de contenido al sitio. Mostraremos estas publicaciones como una lista en la página de inicio y también en su propia página.</p>
+<p>Hugo tiene un comando para generar una publicación esqueleto, al igual que lo hace para sitios y temas.</p>
+<pre><code>$ hugo --verbose new post/first.md
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 attempting to create  post/first.md of post
+INFO: 2014/09/29 curpath: /Users/quoha/Sites/zafta/themes/zafta/archetypes/default.md
+ERROR: 2014/09/29 Unable to Cast &lt;nil&gt; to map[string]interface{}
+
+$ 
+</code></pre><p>Eso no fue muy agradable, ¿verdad?</p>
+<p>El comando &ldquo;new&rdquo; utiliza un arquetipo para crear el archivo de publicación. Hugo creó un archivo de arquetipo predeterminado vacío, pero eso causa un error cuando hay un tema. Para mí, la solución era crear un archivo de arquetipos específicamente para el tipo de publicación.</p>
+<pre><code>$ vi themes/zafta/archetypes/post.md
++++
+Description = &quot;&quot;
+Tags = []
+Categories = []
++++
+:wq
+
+$ find themes/zafta/archetypes -type f | xargs ls -l
+-rw-r--r--  1 quoha  staff   0 Sep 29 21:53 themes/zafta/archetypes/default.md
+-rw-r--r--  1 quoha  staff  51 Sep 29 21:54 themes/zafta/archetypes/post.md
+
+$ hugo --verbose new post/first.md
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 attempting to create  post/first.md of post
+INFO: 2014/09/29 curpath: /Users/quoha/Sites/zafta/themes/zafta/archetypes/post.md
+INFO: 2014/09/29 creating /Users/quoha/Sites/zafta/content/post/first.md
+/Users/quoha/Sites/zafta/content/post/first.md created
+
+$ hugo --verbose new post/second.md
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 attempting to create  post/second.md of post
+INFO: 2014/09/29 curpath: /Users/quoha/Sites/zafta/themes/zafta/archetypes/post.md
+INFO: 2014/09/29 creating /Users/quoha/Sites/zafta/content/post/second.md
+/Users/quoha/Sites/zafta/content/post/second.md created
+
+$ ls -l content/post
+total 16
+-rw-r--r--  1 quoha  staff  104 Sep 29 21:54 first.md
+-rw-r--r--  1 quoha  staff  105 Sep 29 21:57 second.md
+
+$ cat content/post/first.md 
++++
+Categories = []
+Description = &quot;&quot;
+Tags = []
+date = &quot;2014-09-29T21:54:53-05:00&quot;
+title = &quot;first&quot;
+
++++
+my first post
+
+$ cat content/post/second.md 
++++
+Categories = []
+Description = &quot;&quot;
+Tags = []
+date = &quot;2014-09-29T21:57:09-05:00&quot;
+title = &quot;second&quot;
+
++++
+my second post
+
+$ 
+</code></pre><p>Crea el sitio web y luego verifica los resultados.</p>
+<pre><code>$ rm -rf public
+$ hugo --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 found taxonomies: map[string]string{&quot;category&quot;:&quot;categories&quot;, &quot;tag&quot;:&quot;tags&quot;}
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content 
+0 future content 
+2 pages created 
+0 tags created
+0 categories created
+in 4 ms
+$
+</code></pre><p>La salida dice que creó 2 páginas. Esas son nuestras nuevas publicaciones:</p>
+<pre><code>$ find public -type f -name '*.html' | xargs ls -l
+-rw-r--r--  1 quoha  staff  78 Sep 29 22:13 public/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/post/first/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/post/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:13 public/post/second/index.html
+$
+</code></pre><p>Los nuevos archivos están vacíos porque las plantillas utilizadas para generar el contenido están vacías. La página de inicio tampoco muestra el nuevo contenido. Tenemos que actualizar las plantillas para agregar las publicaciones.</p>
+<h3 id="plantillas-individuales-y-de-lista">Plantillas individuales y de lista</h3>
+<p>En Hugo, tenemos tres tipos principales de plantillas. Existe la plantilla de la página de inicio que actualizamos anteriormente. Solo lo usa la página de inicio. También tenemos plantillas &ldquo;individuales&rdquo; que se utilizan para generar resultados para un único archivo de contenido. También tenemos plantillas de &ldquo;lista&rdquo; que se utilizan para agrupar múltiples piezas de contenido antes de generar resultados.</p>
+<p>En términos generales, las plantillas de lista se denominan &ldquo;list.html&rdquo; y las plantillas individuales se denominan &ldquo;single.html&rdquo;.</p>
+<p>Hay otros tres tipos de plantillas: parciales, vistas de contenido y términos. No entraremos en muchos detalles sobre estos.</p>
+<h3 id="agregar-contenido-a-la-página-de-inicio">Agregar contenido a la página de inicio</h3>
+<p>La página de inicio contendrá una lista de publicaciones. Actualicemos su plantilla para agregar las publicaciones que acabamos de crear. La lógica en la plantilla se ejecutará cada vez que construyamos el sitio.</p>
+<pre><code>$ vi themes/zafta/layouts/index.html 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  {{ range first 10 .Data.Pages }}
+    &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  {{ end }}
+&lt;/body&gt;
+&lt;/html&gt;
+:wq
+
+$
+</code></pre><p>Hugo usa el motor de plantillas Go. Ese motor escanea los archivos de plantilla en busca de comandos que están encerrados entre &ldquo;{{&rdquo; y &ldquo;}}&quot;. En nuestra plantilla, los comandos son:</p>
+<ol>
+<li>range</li>
+<li>.Title</li>
+<li>end</li>
+</ol>
+<p>El comando &ldquo;range&rdquo; es un iterador. Lo usaremos para pasar por las primeras diez páginas. Cada archivo HTML que crea Hugo se trata como una página, por lo que al recorrer la lista de páginas se verá cada archivo que se creará.</p>
+<p>El comando &ldquo;.Title&rdquo; imprime el valor de la variable &ldquo;title&rdquo;. Hugo lo saca de la sección Front Matter del archivo Markdown.</p>
+<p>El comando &ldquo;end&rdquo; señala el final del iterador de rango. El motor vuelve a la parte superior de la iteración cuando encuentra &ldquo;end&rdquo;. Todo entre el &ldquo;range&rdquo; y el &ldquo;end&rdquo; se evalúa cada vez que el motor pasa por la iteración. En este archivo, eso provocaría que el título de las primeras diez páginas salga como encabezado de nivel uno.</p>
+<p>Es útil recordar que algunas variables, como .Data, se crean antes de cualquier archivo de salida. Hugo carga cada archivo de contenido en la variable y luego le da a la plantilla la oportunidad de procesar antes de crear los archivos HTML.</p>
+<p>Crea el sitio web y luego verifica los resultados.</p>
+<pre><code>$ rm -rf public
+$ hugo --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 found taxonomies: map[string]string{&quot;tag&quot;:&quot;tags&quot;, &quot;category&quot;:&quot;categories&quot;}
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content 
+0 future content 
+2 pages created 
+0 tags created
+0 categories created
+in 4 ms
+$ find public -type f -name '*.html' | xargs ls -l 
+-rw-r--r--  1 quoha  staff  94 Sep 29 22:23 public/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/first/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/index.html
+-rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/second/index.html
+$ cat public/index.html 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  
+    &lt;h1&gt;second&lt;/h1&gt;
+  
+    &lt;h1&gt;first&lt;/h1&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;
+$
+</code></pre><p>Felicidades, la página de inicio muestra el título de las dos publicaciones. Las publicaciones mismas todavía están vacías, pero tomemos un momento para apreciar lo que hemos hecho. Su plantilla ahora genera resultados dinámicamente. Lo creas o no, al insertar el comando range dentro de esas llaves, has aprendido todo lo que necesitas saber para crear un tema. Todo lo que realmente queda es entender qué plantilla se usará para generar cada archivo de contenido y familiarizarse con los comandos para el motor de plantillas.</p>
+<p>Y, si eso fuera completamente cierto, este tutorial sería mucho más corto. Hay algunas cosas que debes saber que harán que crear una nueva plantilla sea mucho más fácil. No te preocupes, todo llegará.</p>
+<h3 id="agregar-contenido-a-las-publicaciones">Agregar contenido a las publicaciones</h3>
+<p>Estamos trabajando con publicaciones, que están en el directorio content/post/. Eso significa que su sección es &ldquo;post&rdquo; (y si no hacemos algo extraño, su tipo también es &ldquo;post&rdquo;).</p>
+<p>Hugo usa la sección y el tipo para encontrar el archivo de plantilla para cada pieza de contenido. Hugo buscará primero un archivo de plantilla que coincida con la sección o el nombre del tipo. Si no puede encontrar uno, buscará en el directorio _default/. Hay algunos giros que cubriremos cuando lleguemos a categorías y etiquetas, pero por ahora podemos suponer que Hugo intentará publicar /single.html, luego _default/single.html.</p>
+<p>Ahora que conocemos la regla de búsqueda, veamos qué tenemos realmente disponible:</p>
+<pre><code>$ find themes/zafta -name single.html | xargs ls -l
+-rw-r--r--  1 quoha  staff  132 Sep 29 17:31 themes/zafta/layouts/_default/single.html
+</code></pre><p>Podríamos crear una nueva plantilla, post/single.html, o cambiar la predeterminada. Como no conocemos ningún otro tipo de contenido, comencemos con la actualización del valor predeterminado.</p>
+<p>Recuerda, cualquier contenido para el que no hayamos creado una plantilla terminará usando esta plantilla. Eso puede ser bueno o malo. Malo porque sé que vamos a agregar diferentes tipos de contenido y terminaremos deshaciendo algunos de los cambios que hemos realizado. Es bueno porque podremos ver resultados inmediatos. También es bueno comenzar aquí porque podemos comenzar a construir el diseño básico para el sitio. A medida que agreguemos más tipos de contenido, refactorizaremos este archivo y moveremos la lógica. Hugo lo hace bastante indoloro, así que aceptaremos el costo y procederemos.</p>
+<p>Consulta la documentación de Hugo sobre la representación de plantillas para obtener todos los detalles sobre cómo determinar qué plantilla utilizar. Y, como mencionan los documentos, si estás creando un sitio web de aplicación de página única (SPA), puedes eliminar todas las otras plantillas y trabajar solo con la página única predeterminada. Esa es una cantidad refrescante de alegría allí mismo.</p>
+<h4 id="actualizar-el-archivo-de-plantilla">Actualizar el archivo de plantilla</h4>
+<pre><code>$ vi themes/zafta/layouts/_default/single.html 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;{{ .Title }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  {{ .Content }}
+&lt;/body&gt;
+&lt;/html&gt;
+:wq
+
+$
+</code></pre><p>Construye el sitio web y verifica los resultados.</p>
+<pre><code>$ rm -rf public
+$ hugo --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 found taxonomies: map[string]string{&quot;tag&quot;:&quot;tags&quot;, &quot;category&quot;:&quot;categories&quot;}
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content 
+0 future content 
+2 pages created 
+0 tags created
+0 categories created
+in 4 ms
+
+$ find public -type f -name '*.html' | xargs ls -l
+-rw-r--r--  1 quoha  staff   94 Sep 29 22:40 public/index.html
+-rw-r--r--  1 quoha  staff  125 Sep 29 22:40 public/post/first/index.html
+-rw-r--r--  1 quoha  staff    0 Sep 29 22:40 public/post/index.html
+-rw-r--r--  1 quoha  staff  128 Sep 29 22:40 public/post/second/index.html
+
+$ cat public/post/first/index.html 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;first&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;first&lt;/h1&gt;
+  &lt;p&gt;my first post&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+$ cat public/post/second/index.html 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;second&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;second&lt;/h1&gt;
+  &lt;p&gt;my second post&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+$
+</code></pre><p>Ten en cuenta que los posts ahora tienen contenido. Puedes ir a localhost:1313/post/first para comprobarlo.</p>
+<h3 id="enlazando-al-contenido">Enlazando al contenido</h3>
+<p>Las publicaciones están en la página de inicio. Agreguemos un enlace desde allí a la publicación. Como esta es la página de inicio, actualizaremos su plantilla.</p>
+<pre><code>$ vi themes/zafta/layouts/index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  {{ range first 10 .Data.Pages }}
+    &lt;h1&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Title }}&lt;/a&gt;&lt;/h1&gt;
+  {{ end }}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>Construye el sitio web y verifica los resultados.</p>
+<pre><code>$ rm -rf public
+$ hugo --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 found taxonomies: map[string]string{&quot;tag&quot;:&quot;tags&quot;, &quot;category&quot;:&quot;categories&quot;}
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content 
+0 future content 
+2 pages created 
+0 tags created
+0 categories created
+in 4 ms
+
+$ find public -type f -name '*.html' | xargs ls -l
+-rw-r--r--  1 quoha  staff  149 Sep 29 22:44 public/index.html
+-rw-r--r--  1 quoha  staff  125 Sep 29 22:44 public/post/first/index.html
+-rw-r--r--  1 quoha  staff    0 Sep 29 22:44 public/post/index.html
+-rw-r--r--  1 quoha  staff  128 Sep 29 22:44 public/post/second/index.html
+
+$ cat public/index.html 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  
+    &lt;h1&gt;&lt;a href=&quot;/post/second/&quot;&gt;second&lt;/a&gt;&lt;/h1&gt;
+  
+    &lt;h1&gt;&lt;a href=&quot;/post/first/&quot;&gt;first&lt;/a&gt;&lt;/h1&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;
+
+$
+</code></pre><h3 id="crear-un-listado-de-publicaciones">Crear un listado de publicaciones</h3>
+<p>Tenemos las publicaciones que se muestran en la página de inicio y en su propia página. También tenemos un archivo public/post/index.html que está vacío. Hagamos que muestre una lista de todas las publicaciones (no solo las primeras diez).</p>
+<p>Necesitamos decidir qué plantilla actualizar. Esta será una lista, por lo que debería ser una plantilla de lista. Echemos un vistazo rápido y veamos qué plantillas de lista están disponibles.</p>
+<pre><code>$ find themes/zafta -name list.html | xargs ls -l
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
+</code></pre><p>Al igual que con la publicación individual, tenemos que decidir actualizar _default/list.html o crear post/list.html. Todavía no tenemos múltiples tipos de contenido, así que seamos coherentes y actualiza la plantilla de lista predeterminada.</p>
+<h2 id="crear-páginas-de-nivel-superior">Crear páginas de nivel superior</h2>
+<p>Agreguemos una página &ldquo;Sobre mí&rdquo; y la mostraremos en el nivel superior (a diferencia de un subnivel como lo hicimos con las publicaciones).</p>
+<p>El valor predeterminado en Hugo es utilizar la estructura de directorios del directorio content/ para guiar la ubicación del html generado en el directorio public/. Verifiquemos eso creando una página &ldquo;Sobre mí&rdquo; en el nivel superior:</p>
+<pre><code>$ vi content/about.md 
++++
+title = &quot;about&quot;
+description = &quot;about this site&quot;
+date = &quot;2014-09-27&quot;
+slug = &quot;about time&quot;
++++
+
+## about us
+
+i'm speechless
+:wq
+</code></pre><p>Genera el sitio web y verifica los resultados.</p>
+<pre><code>$ find public -name '*.html' | xargs ls -l
+-rw-rw-r--  1 mdhender  staff   334 Sep 27 15:08 public/about-time/index.html
+-rw-rw-r--  1 mdhender  staff   527 Sep 27 15:08 public/index.html
+-rw-rw-r--  1 mdhender  staff   358 Sep 27 15:08 public/post/first-post/index.html
+-rw-rw-r--  1 mdhender  staff     0 Sep 27 15:08 public/post/index.html
+-rw-rw-r--  1 mdhender  staff   342 Sep 27 15:08 public/post/second-post/index.html
+</code></pre><p>Ten en cuenta que la página no se creó en el nivel superior. Fue creado en un subdirectorio llamado &lsquo;about-time/'. Ese nombre vino de nuestro slug. Hugo usará el slug para nombrar el contenido generado. Por cierto, es un valor predeterminado razonable, pero podemos aprender algunas cosas luchando por este archivo.</p>
+<p>Otra cosa. Echa un vistazo a la página de inicio.</p>
+<pre><code>$ cat public/index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;&lt;a href=&quot;http://localhost:1313/post/theme/&quot;&gt;creating a new theme&lt;/a&gt;&lt;/h1&gt;
+    &lt;h1&gt;&lt;a href=&quot;http://localhost:1313/about-time/&quot;&gt;about&lt;/a&gt;&lt;/h1&gt;
+    &lt;h1&gt;&lt;a href=&quot;http://localhost:1313/post/second-post/&quot;&gt;second&lt;/a&gt;&lt;/h1&gt;
+    &lt;h1&gt;&lt;a href=&quot;http://localhost:1313/post/first-post/&quot;&gt;first&lt;/a&gt;&lt;/h1&gt;
+&lt;script&gt;document.write('&lt;script src=&quot;http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10&quot;&gt;&lt;/'
+        + 'script&gt;')&lt;/script&gt;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>¿Te das cuenta de que el enlace &ldquo;acerca de&rdquo; aparece en las publicaciones? Eso no es deseable, así que cambiemos eso primero.</p>
+<pre><code>$ vi themes/zafta/layouts/index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;posts&lt;/h1&gt;
+  {{ range first 10 .Data.Pages }}
+    {{ if eq .Type &quot;post&quot;}}
+      &lt;h2&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
+    {{ end }}
+  {{ end }}
+
+  &lt;h1&gt;pages&lt;/h1&gt;
+  {{ range .Data.Pages }}
+    {{ if eq .Type &quot;page&quot; }}
+      &lt;h2&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
+    {{ end }}
+  {{ end }}
+&lt;/body&gt;
+&lt;/html&gt;
+:wq
+</code></pre><p>Genere el sitio web y verifique los resultados. La página de inicio tiene dos secciones, publicaciones y páginas, y cada sección tiene el conjunto correcto de encabezados y enlaces.</p>
+<p>Pero esa página acerca de todavía se muestra sobre about-time/index.html.</p>
+<pre><code>$ find public -name '*.html' | xargs ls -l
+-rw-rw-r--  1 mdhender  staff    334 Sep 27 15:33 public/about-time/index.html
+-rw-rw-r--  1 mdhender  staff    645 Sep 27 15:33 public/index.html
+-rw-rw-r--  1 mdhender  staff    358 Sep 27 15:33 public/post/first-post/index.html
+-rw-rw-r--  1 mdhender  staff      0 Sep 27 15:33 public/post/index.html
+-rw-rw-r--  1 mdhender  staff    342 Sep 27 15:33 public/post/second-post/index.html
+</code></pre><p>Sabiendo que Hugo está usando el slug para generar el nombre del archivo, la solución más simple es cambiar el slug. Hagámoslo de la manera difícil y cambiemos el enlace permanente en el archivo de configuración.</p>
+<pre><code>$ vi config.toml
+[permalinks]
+	page = &quot;/:title/&quot;
+	about = &quot;/:filename/&quot;
+</code></pre><p>Genera el sitio web y verifica que esto no funcionó. Hugo permite que &ldquo;slug&rdquo; o &ldquo;URL&rdquo; anulen la configuración de enlaces permanentes en el archivo de configuración. Continúa y comenta el slug en content/about.md, luego genera el sitio web para que se cree en el lugar correcto.</p>
+<h2 id="compartir-plantillas">Compartir plantillas</h2>
+<p>Si has estado siguiendo, probablemente hayas notado que las publicaciones tienen títulos en el navegador y la página de inicio no. Eso es porque no pusimos el título en la plantilla de la página de inicio (layouts/index.html). Es algo fácil de hacer, pero veamos una opción diferente.</p>
+<p>Podemos poner los pedazos comunes en una plantilla compartida que se almacena en el directorio themes/zafta/layouts/partials/.</p>
+<h3 id="crear-los-parciales-de-encabezado-y-pie-de-página">Crear los parciales de encabezado y pie de página</h3>
+<p>En Hugo, un parcial es una plantilla recubierta de azúcar. Normalmente, una referencia de plantilla tiene una ruta especificada. Los parciales son diferentes. Hugo los busca a lo largo de una ruta de búsqueda definida TODO. Esto facilita a los usuarios finales anular la presentación del tema.</p>
+<pre><code>$ vi themes/zafta/layouts/partials/header.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;{{ .Title }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+:wq
+
+$ vi themes/zafta/layouts/partials/footer.html
+&lt;/body&gt;
+&lt;/html&gt;
+:wq
+</code></pre><h3 id="actualice-la-plantilla-de-la-página-de-inicio-para-usar-los-parciales">Actualice la plantilla de la página de inicio para usar los parciales</h3>
+<p>La diferencia más notable entre una llamada de plantilla y una llamada parcial es la falta de ruta:</p>
+<pre><code>{{ template &quot;theme/partials/header.html&quot; . }}
+</code></pre><p>en vez de</p>
+<pre><code>{{ partial &quot;header.html&quot; . }}
+</code></pre><p>Ambos pasan en el contexto.</p>
+<p>Cambiemos la plantilla de la página de inicio para usar estos nuevos parciales.</p>
+<pre><code>$ vi themes/zafta/layouts/index.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;posts&lt;/h1&gt;
+  {{ range first 10 .Data.Pages }}
+    {{ if eq .Type &quot;post&quot;}}
+      &lt;h2&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Title }}&lt;/a&gt;&lt;/h2&gt;
+    {{ end }}
+  {{ end }}
+
+  &lt;h1&gt;pages&lt;/h1&gt;
+  {{ range .Data.Pages }}
+    {{ if or (eq .Type &quot;page&quot;) (eq .Type &quot;about&quot;) }}
+      &lt;h2&gt;&lt;a href=&quot;{{ .Permalink }}&quot;&gt;{{ .Type }} - {{ .Title }} - {{ .RelPermalink }}&lt;/a&gt;&lt;/h2&gt;
+    {{ end }}
+  {{ end }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+</code></pre><p>Genera el sitio web y verifica los resultados. El título en la página de inicio ahora es &ldquo;su título aquí&rdquo;, que proviene de la variable &ldquo;title&rdquo; en el archivo config.toml.</p>
+<h3 id="actualiza-la-plantilla-individual-predeterminada-para-usar-los-parciales">Actualiza la plantilla individual predeterminada para usar los parciales</h3>
+<pre><code>$ vi themes/zafta/layouts/_default/single.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  {{ .Content }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+</code></pre><p>Genera el sitio web y verifica los resultados. El título de las publicaciones y la página acerca de, ambos deben reflejar el valor en el archivo Markdown.</p>
+<h2 id="agregar-fecha-de-publicación-a-las-publicaciones">Agregar &ldquo;Fecha de publicación&rdquo; a las publicaciones</h2>
+<p>Es común que las publicaciones muestren la fecha en que fueron escritas o publicadas, así que agreguemos eso. El tema principal de nuestras publicaciones tiene una variable llamada &ldquo;date&rdquo;. Por lo general, es la fecha en que se creó el contenido, pero supongamos que ese es el valor que queremos mostrar.</p>
+<h3 id="agregar-fecha-de-publicación-a-la-plantilla">Agregar &ldquo;Fecha de publicación&rdquo; a la plantilla</h3>
+<p>Comenzaremos actualizando la plantilla utilizada para representar las publicaciones. El código de la plantilla se verá así:</p>
+<pre><code>{{ .Date.Format &quot;Mon, Jan 2, 2006&quot; }}
+</code></pre><p>Las publicaciones usan la plantilla individual predeterminada, por lo que cambiaremos ese archivo.</p>
+<pre><code>$ vi themes/zafta/layouts/_default/single.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  &lt;h2&gt;{{ .Date.Format &quot;Mon, Jan 2, 2006&quot; }}&lt;/h2&gt;
+  {{ .Content }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+</code></pre><p>Genera el sitio web y verifica los resultados. Las publicaciones ahora tienen la fecha mostrada en ellas. Sin embargo, hay un problema. La página &ldquo;acerca de&rdquo; también muestra la fecha.</p>
+<p>Como de costumbre, hay un par de maneras de hacer que la fecha se muestre solo en publicaciones. Podríamos hacer una declaración de &ldquo;si&rdquo; como lo hicimos en la página de inicio. Otra forma sería crear una plantilla separada para las publicaciones.</p>
+<p>La solución &ldquo;si&rdquo; funciona para sitios que tienen solo un par de tipos de contenido. También se alinea con el principio del &ldquo;código para hoy&rdquo;.</p>
+<p>Sin embargo, supongamos que hemos hecho que nuestro sitio sea tan complejo que creemos que tenemos que crear un nuevo tipo de plantilla. En Hugo-speak, vamos a crear una plantilla de sección.</p>
+<p>Restauremos la plantilla individual predeterminada antes de que la olvidemos.</p>
+<pre><code>$ mkdir themes/zafta/layouts/post
+$ vi themes/zafta/layouts/_default/single.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  {{ .Content }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+</code></pre><p>Ahora actualizaremos la versión de la publicación de la plantilla individual. Si recuerdas las reglas de Hugo, el motor de plantillas usará esta versión sobre la predeterminada.</p>
+<pre><code>$ vi themes/zafta/layouts/post/single.html
+{{ partial &quot;header.html&quot; . }}
+
+  &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+  &lt;h2&gt;{{ .Date.Format &quot;Mon, Jan 2, 2006&quot; }}&lt;/h2&gt;
+  {{ .Content }}
+
+{{ partial &quot;footer.html&quot; . }}
+:wq
+
+</code></pre><p>Ten en cuenta que eliminamos la lógica de fecha de la plantilla predeterminada y la colocamos en la plantilla de publicación. Genera el sitio web y verifica los resultados. Las publicaciones tienen fechas y la página acerca de, no.</p>
+<h3 id="no-te-repitas">No te repitas</h3>
+<p>DRY es un buen objetivo de diseño y Hugo hace un gran trabajo al apoyarlo. Parte del arte de una buena plantilla es saber cuándo agregar una nueva plantilla y cuándo actualizar una existente. Mientras te das cuenta de eso, acepta que estarás refactorizando. Hugo lo hace fácil y rápido, por lo que está bien retrasar la división de una plantilla.</p>
+
+      </section>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="https://naujoel.github.io/img/avatarLeo.jpg" alt="Author" />
+          <span class="post-card-author"><a href="https://naujoel.github.io/">Naujoël</a></span>
+      </footer>
+    </div>
+</article>
+    </div>
+
+    <nav class="pagination" role="navigation">
+      
+          <a class="newer-posts" href="https://naujoel.github.io/post/wonderful/">&larr; <span class="hide">Next Post</span></a>
+      
+      <span class="page-number">&nbsp;</span>
+      
+          <a class="older-posts" href="https://naujoel.github.io/post/getting-started-with-hugo/"><span class="hide">Previous Post</span> &rarr;</a>
+      
+    </nav>
+
+    
+    
+    
+
+  </div>
+</main>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="https://naujoel.github.io/">Naujoël</a> © 2020 <br>
+      <span style="font-size: 0.8em; color: #555;">Una fuente de información jurídica</span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="https://naujoel.github.io/">Latest Posts</a>
+        
+        
+        <a href="https://github.com/naujoel" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://naujoel.github.io/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+</body></html>
