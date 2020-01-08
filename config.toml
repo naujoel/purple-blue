@@ -1,4 +1,4 @@
-baseurl         = "https://naujoel.github.io/purple-blue/"
+baseurl         = "https://naujoel.github.io/"
 theme           = "casper-two"
 languageCode    = "es-ES"
 disqusShortname = ""
